@@ -104,5 +104,33 @@
 
             return sum / (n - m + 1);
         }
+
+        //4-Задание
+        delegate int Sums(int m, int n);
+        static void Main(string[] args)
+        {
+            Sums del = Sum;
+            int result1 = del(1, 10);
+            Console.WriteLine($"Сумма чисел от 1 до 10: " + result1);
+
+            int result2 = del(20, 30);
+            Console.WriteLine($"Сумма чисел от 20 до 30: " + result2);
+
+            int result3 = del(30, 40);
+            Console.WriteLine($"Сумма чисел от 30 до 40: " + result3);
+
+            Console.ReadKey();
+        }
+
+        private static int Sum(int m, int n)
+        {
+            int sum = 0;
+            for (int i = m; i < n; i++)
+            {
+                sum += i;
+            }
+
+            return sum;
+        }
     }
 }
