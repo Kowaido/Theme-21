@@ -22,12 +22,12 @@
 
         private static void GoodMorning()
         {
-            Console.WriteLine("Good Morning");
+            Console.WriteLine("Доброе утро");
         }
 
         private static void GoodEvening()
         {
-            Console.WriteLine("Good Evening");
+            Console.WriteLine("Добрый вечер");
         }
 
         //2-Задание
