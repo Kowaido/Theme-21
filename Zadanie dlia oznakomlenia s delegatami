@@ -1,6 +1,7 @@
 {
     class Program
     {
+        //1-Задание
         delegate void GetMessage();
         static void Main(string[] args)
         {
@@ -29,9 +30,7 @@
             Console.WriteLine("Good Evening");
         }
 
-{
-    class Program
-    {
+        //2-Задание
         delegate int Operator(int x, int y);
         static void Main(string[] args)
         {
