@@ -81,5 +81,28 @@
                 return x / y;
             }
         }
+
+        //3-Задание
+        delegate double Averages(int m, int n);
+        static void Main(string[] args)
+        {
+            Averages del = new Averages(Average);
+            Console.WriteLine($"Среднее от 1 до 10 {del(1, 10)}");
+            Console.WriteLine($"Среднее от 5 до 15 {del(5, 15)}");
+            Console.WriteLine($"Среднее от -3 до 6 {del(-3, 6)}");
+
+            Console.ReadKey();
+        }
+
+        private static double Average(int m, int n)
+        {
+            double sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += i;
+            }
+
+            return sum / (n - m + 1);
+        }
     }
 }
