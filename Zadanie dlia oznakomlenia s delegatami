@@ -1,3 +1,6 @@
+{
+    class Program
+    {
         delegate void GetMessage();
         static void Main(string[] args)
         {
@@ -25,3 +28,32 @@
         {
             Console.WriteLine("Good Evening");
         }
+
+{
+    class Program
+    {
+        delegate int Operator(int x, int y);
+        static void Main(string[] args)
+        {
+            Operator del = new Operator(Add);
+            int result = del.Invoke(4, 5);
+            Console.WriteLine(result);
+
+            del = Multiply;
+            result = del(4, 5);
+            Console.WriteLine(result);
+
+            Console.ReadKey();
+        }
+
+        private static int Add(int x, int y)
+        {
+            return x + y;
+        }
+
+        private static int Multiply(int x, int y)
+        {
+            return x * y;
+        }
+    }
+}
