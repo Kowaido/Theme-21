@@ -35,11 +35,19 @@
         static void Main(string[] args)
         {
             Operator del = new Operator(Add);
-            int result = del.Invoke(4, 5);
+            int result = del.Invoke(5, 5);
+            Console.WriteLine(result);
+
+            del = Sub;
+            result = del(5, 5);
             Console.WriteLine(result);
 
             del = Multiply;
-            result = del(4, 5);
+            result = del(5, 5);
+            Console.WriteLine(result);
+
+            del = Devived;
+            result = del(5, 5);
             Console.WriteLine(result);
 
             Console.ReadKey();
@@ -50,9 +58,28 @@
             return x + y;
         }
 
+        private static int Sub(int x, int y)
+        {
+            return x - y;
+        }
+
         private static int Multiply(int x, int y)
         {
             return x * y;
+        }
+
+        private static int Devived(int x, int y)
+        {
+            if (x / y >= 0)
+            {
+                return x / y;
+            }
+
+            else
+            {
+                Console.WriteLine("Числа немогут уйти в отрицательную часть");
+                return x / y;
+            }
         }
     }
 }
